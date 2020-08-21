@@ -1,0 +1,118 @@
+#product-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 5%;
+}
+
+#product-table td,
+#product-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#product-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#product-table tr:hover {
+  background-color: #ddd;
+}
+
+#product-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(61, 58, 58);
+  color: white;
+}
+
+.addbutton {
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  margin: 4px 20px;
+  cursor: pointer;
+  font-size: 10px;
+  /* float: right; */
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.button1 {
+  background-color: blue;
+}
+
+.button2 {
+  background-color: red;
+}
+
+.input-category {
+  /* width: 25%; */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.select-category {
+  display: inline;
+  /* float: right; */
+  /* width: 32%; */
+  /* margin-top: 6px; */
+  /* margin-left: 600px; */
+}
+
+.input-sort-product {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.sort-by {
+  display: inline;
+}
+
+.search-container {
+  float: right;
+  /* padding: 6px; */
+  /* margin-top: 8px; */
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  /* padding: 6px 10px; */
+  margin-top: 3px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container:after {
+  clear: both;
+  display: block;
+}
+
+.search-container button:after {
+  clear: both;
+  display: block;
+}

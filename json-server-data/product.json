@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Electronics",
+      "name": "MI HD TV",
+      "price": "220",
+      "quantity": "9",
+      "instock": "YES"
+    },
+    {
+      "id": 2,
+      "category": "Electronics",
+      "name": "OnePlus QLED TV",
+      "price": "230",
+      "quantity": "9",
+      "instock": "NO"
+    },
+    {
+      "id": 3,
+      "category": "Electronics",
+      "name": "Micromax UHD LED",
+      "price": "120",
+      "quantity": "4",
+      "instock": "YES"
+    },
+    {
+      "id": 4,
+      "category": "Accessories",
+      "name": "Fostelo Catlin HandBag",
+      "price": "150",
+      "quantity": "4",
+      "instock": "NO"
+    },
+    {
+      "id": 5,
+      "category": "Accessories",
+      "name": "Typify Leather Bag",
+      "price": "165",
+      "quantity": "3",
+      "instock": "YES"
+    }
+  ]
+}
