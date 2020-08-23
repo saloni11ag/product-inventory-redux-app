@@ -17,7 +17,7 @@
     background-color: #333;
   }
 
-  /* @media screen and (max-width: 500px) {
+  @media screen and (max-width: 500px) {
     #navbar {
      width: 150%;
     }
@@ -26,7 +26,21 @@
 
   @media screen and (max-width: 450px) {
     #navbar {
-     width: 150%;
+     width: 127%;
     }
     
-  } */
+  }
+
+  @media screen and (max-width: 375px) {
+    #navbar {
+     width: 145%;
+    }
+    
+  }
+
+  @media screen and (max-width: 350px) {
+    #navbar {
+     width: 170%;
+    }
+    
+  }
