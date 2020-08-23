@@ -150,7 +150,7 @@ class Home extends Component {
                 <NotificationBar total={this.props.allproducts.length}></NotificationBar>
                 <button className="addbutton button1" onClick={this.addProductClick}>Add Product</button>
                 <div className="select-category">
-                    <span style={{ marginLeft: "50px" }}>Filter By Category  </span>
+                    <span>Filter By Category  </span>
                     <select name="categoryname" className="input-category" onChange={this.selectChange} >
                         <option value="all">All Categories</option>
                         <option value="Electronics">Electronics</option>
@@ -159,7 +159,7 @@ class Home extends Component {
                     </select>
                 </div>
                 <div className="sort-by">
-                    <span style={{ marginLeft: "30px" }}>Sort By: </span>
+                    <span>Sort By: </span>
                     <select name="sort" className="input-sort-product" onChange={this.sortChange} >
                         <option value="all-product">---  sort by  ---</option>
                         <option value="product-asc">Ascending A to Z</option>

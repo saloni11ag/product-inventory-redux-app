@@ -9,7 +9,7 @@ class NotificationBar extends Component {
     render() {
         return (
             <div>
-                <header>
+                <header style={{flex: "1"}}>
                     <ul id="navbar">
                         <li className="navbar-items"> <marquee className="notification-bar">Total products in invetory: <span>{this.props.total}</span></marquee></li>
                     </ul>

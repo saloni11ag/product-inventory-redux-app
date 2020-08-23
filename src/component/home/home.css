@@ -74,7 +74,7 @@
   /* float: right; */
   /* width: 32%; */
   /* margin-top: 6px; */
-  /* margin-left: 600px; */
+  margin-left: 50px;
 }
 
 .input-sort-product {
@@ -86,6 +86,7 @@
 
 .sort-by {
   display: inline;
+  margin-left: 30px;
 }
 
 .search-container {
@@ -115,4 +116,21 @@
 .search-container button:after {
   clear: both;
   display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .select-category {
+    display: block;
+    margin-left: 15px;
+  }
+  .sort-by {
+    display: block;
+    margin-left: 15px;
+  }
+  .search-container {
+    /* padding: 6px; */
+    margin-top: 8px;
+    float: left;
+    margin-left: 15px;
+  }
 }

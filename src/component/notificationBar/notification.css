@@ -5,6 +5,7 @@
     overflow: hidden;
     background-color: #111;
     display: flex;
+    flex: 1;
   }
     
   .navbar-items .notification-bar {
