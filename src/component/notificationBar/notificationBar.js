@@ -11,7 +11,7 @@ class NotificationBar extends Component {
             <div style={{flex: "1"}}>
                 <header>
                     <ul id="navbar">
-                        <li className="navbar-items"> <marquee className="notification-bar">Total products in invetory: <span>{this.props.total}</span></marquee></li>
+                        <li className="navbar-items"> <div className="notification-bar">Total products in invetory: <span>{this.props.total}</span></div></li>
                     </ul>
                 </header>
             </div>
