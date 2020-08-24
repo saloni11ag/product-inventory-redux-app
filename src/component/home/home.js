@@ -122,6 +122,18 @@ class Home extends Component {
                 })
             this.setState({ productList: prods_list })
             console.log(prods_list);
+        } else if (val === "in-stock") {
+            let filteredProducts = this.props.allproducts.filter(prod => {
+                return prod.instock === "YES"
+            })
+            this.setState({ productList: filteredProducts })
+            console.log(prods_list);
+        } else if (val === "out-of-stock") {
+            let filteredProducts = this.props.allproducts.filter(prod => {
+                return prod.instock === "NO"
+            })
+            this.setState({ productList: filteredProducts })
+            console.log(prods_list);
         }
     }
 
@@ -156,6 +168,8 @@ class Home extends Component {
                         <option value="Electronics">Electronics</option>
                         <option value="Accessories">Accessories</option>
                         <option value="Clothing">Clothing</option>
+                        <option value="in-stock">InStock</option>
+                        <option value="out-of-stock">Out Of Stock</option>
                     </select>
                 </div>
                 <div className="sort-by">
