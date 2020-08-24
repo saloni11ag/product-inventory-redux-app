@@ -12,7 +12,8 @@ class AddProduct extends Component {
             productname: '',
             productquantity: '',
             productprice: '',
-            instock: 'YES'
+            instock: 'YES',
+            errors: {},
         }
     }
 
@@ -25,8 +26,72 @@ class AddProduct extends Component {
         // this.handleValidation();
     }
 
+    handleValidation() {
+        let productname = this.state.productname;
+        let productquantity = this.state.productquantity
+        let productprice = this.state.productprice
+        console.log(this.state.productquantity)
+        let errors = {};
+        let formIsValid = true;
+
+        //Name
+        if (productname.length < 3) {
+            formIsValid = false;
+            errors["productname"] = "Cannot be less than length 3";
+        }
+
+        if (typeof productname !== "undefined") {
+            if (!productname.match(/^[a-zA-Z\s]*$/)) {
+                formIsValid = false;
+                errors["productname"] = "Only letters";
+            }
+        }
+
+        //productquantity
+        if (!productquantity) {
+            formIsValid = false;
+            errors["productquantity"] = "Cannot be empty";
+        }
+
+        if (productquantity === "0") {
+            formIsValid = false;
+            errors["productquantity"] = "Should be more than 0";
+        }
+
+        if (typeof productquantity !== "undefined") {
+            if (productquantity.match(/^[a-zA-Z]+$/)) {
+                formIsValid = false;
+                errors["productquantity"] = "Only Numbers";
+            }
+        }
+        //productprice
+        if (!productprice) {
+            formIsValid = false;
+            errors["productprice"] = "Cannot be empty";
+        }
+
+        if (typeof productprice !== "undefined") {
+            if (productprice.match(/^[a-zA-Z]+$/)) {
+                formIsValid = false;
+                errors["productprice"] = "Only numbers";
+            }
+        }
+
+        this.setState({ errors: errors });
+        return formIsValid;
+    }
+submitForm = (event) => {
+    event.preventDefault();
+    if (this.handleValidation()) {
+        console.log("Form submitted");
+        this.contactSubmit();
+    } else {
+        console.log("Form has errors.");
+    }
+}
+
     contactSubmit=(event)=>{
-        event.preventDefault();
+        // event.preventDefault();
         let newProduct = {
             "category": this.state.categoryname,
             "name": this.state.productname,
@@ -44,7 +109,7 @@ class AddProduct extends Component {
             <div>
                 <div className="container">
                     <header id="addProduct-header">ADD PRODUCT</header>
-                    <form onSubmit={this.contactSubmit}>
+                    <form onSubmit={this.submitForm}>
                         <div className="row">
                             <div className="col-25">
                                 <label htmlFor="categoryname">Category Name:</label>
@@ -64,7 +129,7 @@ class AddProduct extends Component {
                             <div className="col-75">
                                 <input type="text" className="input-text" id="productname" name="productname" autoComplete="off"
                                     placeholder="Enter Product Name.." onChange={this.changeHandler} title="Name should consists of letters and greater than length 3" required />
-                                {/* <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productname"]}</span> */}
+                                <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productname"]}</span>
                             </div>
                         </div>
                         <div className="row">
@@ -74,7 +139,7 @@ class AddProduct extends Component {
                             <div className="col-75">
                                 <input type="number" className="input-text" id="productquantity" name="productquantity" autoComplete="off"
                                     placeholder="Enter Product Quantity.." onChange={this.changeHandler} title="Quantity should be a number" required />
-                                {/* <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productquantity"]}</span> */}
+                                <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productquantity"]}</span>
                             </div>
                         </div>
                         <div className="row">
@@ -84,7 +149,7 @@ class AddProduct extends Component {
                             <div className="col-75">
                                 <input type="number" className="input-text" id="productprice" name="productprice" autoComplete="off"
                                     placeholder="Enter Product Price.." onChange={this.changeHandler} title="Price should be a number" required />
-                                {/* <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productprice"]}</span> */}
+                                <span style={{ color: "red", fontSize: "14px" }}>{this.state.errors["productprice"]}</span>
                             </div>
                         </div>
                         <div className="row">
