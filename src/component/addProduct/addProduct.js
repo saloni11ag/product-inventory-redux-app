@@ -30,7 +30,7 @@ class AddProduct extends Component {
         let productname = this.state.productname;
         let productquantity = this.state.productquantity
         let productprice = this.state.productprice
-        console.log(this.state.productquantity)
+        // console.log(this.state.productquantity)
         let errors = {};
         let formIsValid = true;
 
@@ -83,7 +83,7 @@ class AddProduct extends Component {
 submitForm = (event) => {
     event.preventDefault();
     if (this.handleValidation()) {
-        console.log("Form submitted");
+        // console.log("Form submitted");
         this.contactSubmit();
     } else {
         console.log("Form has errors.");
@@ -100,7 +100,7 @@ submitForm = (event) => {
             "instock": this.state.instock
         }
 
-        console.log(newProduct);
+        // console.log(newProduct);
         this.props.sendNewProduct(newProduct)
         this.props.history.push('/')
     }

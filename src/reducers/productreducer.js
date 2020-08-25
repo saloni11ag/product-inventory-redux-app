@@ -46,8 +46,8 @@ const productreducer = function getProduct(state = null, action) {
   // console.log(action);
   switch (action.type) {
     case "SEND_PRODUCT":
-      console.log("Action with payload received in reducer with case send_product!")
-      console.log(action.payload);
+      // console.log("Action with payload received in reducer with case send_product!")
+      // console.log(action.payload);
       return action.payload
 
     case "NEW_PRODUCT":
@@ -58,7 +58,7 @@ const productreducer = function getProduct(state = null, action) {
       axios.post('http://localhost:3000/products', tempProd)
         .then(
           response => {
-            console.log(response);
+            // console.log(response);
             // this.props.history.push('/')
           }, error => {
             console.error(error);
@@ -68,7 +68,7 @@ const productreducer = function getProduct(state = null, action) {
       return newProduct
 
     case "EDIT_PRODUCT":
-      console.log("Action with payload received in reducer with case edit_product!")
+      // console.log("Action with payload received in reducer with case edit_product!")
       // console.log(action.payload);
       // let temp = action.payload
       // axios.patch('http://localhost:3000/products/' + action.payload.id, action.payload)
@@ -81,28 +81,28 @@ const productreducer = function getProduct(state = null, action) {
       //   )
       var editProduct = state.map(obj => {
         if (obj.id === action.payload.id) {
-          console.log("before", obj)
+          // console.log("before", obj)
           obj = action.payload
-          console.log("after", obj)
+          // console.log("after", obj)
         }
         return obj
       })
       return editProduct
 
     case "DELETE_PRODUCT":
-      console.log("Action with payload received in reducer with case delet_product!")
+      // console.log("Action with payload received in reducer with case delet_product!")
       // console.log(action.payload);
       // let temp = action.payload
       axios.delete('http://localhost:3000/products/' + action.payload)
         .then(response => {
-          console.log(response)
+          // console.log(response)
         }, error => {
           console.error(error)
         })
       let filteredProducts = state.filter(prod => {
         return prod.id !== action.payload
       })
-      console.log(filteredProducts)
+      // console.log(filteredProducts)
       return filteredProducts
 
 
