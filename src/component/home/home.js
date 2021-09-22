@@ -24,7 +24,7 @@ class Home extends Component {
     getAllProducts = () => {
         axios.get('http://localhost:3000/products')
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 this.props.sendProducts(res.data)
                 this.setState({ productList: this.props.allproducts })
             }, err => {
@@ -100,40 +100,40 @@ class Home extends Component {
                     if (a.name < b.name) { return -1; }
                 })
             this.setState({ productList: prods_list })
-            console.log(prods_list);
+            // console.log(prods_list);
         } else if (val === "product-desc") {
             var prods_list = [].concat(this.props.allproducts)
                 .sort((a, b) => {
                     if (a.name > b.name) { return -1; }
                 })
             this.setState({ productList: prods_list })
-            console.log(prods_list);
+            // console.log(prods_list);
         } else if (val === "price-asc") {
             var prods_list = [].concat(this.props.allproducts)
                 .sort((a, b) => {
                     if (a.price < b.price) { return -1; }
                 })
             this.setState({ productList: prods_list })
-            console.log(prods_list);
+            // console.log(prods_list);
         } else if (val === "price-desc") {
             var prods_list = [].concat(this.props.allproducts)
                 .sort((a, b) => {
                     if (a.price > b.price) { return -1; }
                 })
             this.setState({ productList: prods_list })
-            console.log(prods_list);
+            // console.log(prods_list);
         } else if (val === "in-stock") {
             let filteredProducts = this.props.allproducts.filter(prod => {
                 return prod.instock === "YES"
             })
             this.setState({ productList: filteredProducts })
-            console.log(prods_list);
+            // console.log(prods_list);
         } else if (val === "out-of-stock") {
             let filteredProducts = this.props.allproducts.filter(prod => {
                 return prod.instock === "NO"
             })
             this.setState({ productList: filteredProducts })
-            console.log(prods_list);
+            // console.log(prods_list);
         }
     }
 
@@ -210,8 +210,8 @@ class Home extends Component {
 }
 
 function convertStoreToProps(store) {
-    console.log('Received complete store....in home container');
-    console.log(store);
+    // console.log('Received complete store....in home container');
+    // console.log(store);
     return {
         allproducts: store.getProduct
     }

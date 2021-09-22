@@ -18,7 +18,7 @@ class EditProduct extends Component {
     }
 
     componentWillMount() {
-        console.log(this.props.history.location.state);
+        // console.log(this.props.history.location.state);
         let tempState = this.props.history.location.state
         this.setState({
             id: tempState.id,
@@ -45,7 +45,7 @@ class EditProduct extends Component {
         let productprice = this.state.productprice
         let errors = {};
         let formIsValid = true;
-        console.log(productname);
+        // console.log(productname);
         //Name
         if (productname.length < 3) {
             formIsValid = false;
@@ -95,7 +95,7 @@ class EditProduct extends Component {
     submitForm =(event) => {
         event.preventDefault();
         if (this.handleValidation()) {
-            console.log("Form submitted");
+            // console.log("Form submitted");
             this.contactSubmit();
         } else {
             console.log("Form has errors.");
@@ -113,7 +113,7 @@ class EditProduct extends Component {
             "instock": this.state.instock
         }
 
-        console.log(newProduct);
+        // console.log(newProduct);
         this.props.editProduct(newProduct)
         this.props.history.push('/')
     }

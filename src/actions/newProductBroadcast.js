@@ -1,6 +1,6 @@
 const addProductBroadcast = function(product){
-    console.log("Received new product in action broadcaster....");
-    console.log(product);
+    // console.log("Received new product in action broadcaster....");
+    // console.log(product);
     return ({
         type:'NEW_PRODUCT',
         payload:product
